@@ -1,0 +1,25 @@
+1. Local FortiGate Setup:
+   - Access Local FortiGate GUI using admin credentials.
+   - Revert to the configuration labeled local-ha under Configuration > Revisions.
+   - Reboot the device.
+
+2. Remote FortiGate Setup:
+   - Access Remote FortiGate GUI with admin credentials.
+   - Revert to the configuration labeled initial under Configuration > Revisions.
+   - Reboot the device.
+
+3. HA Configuration on Local FortiGate:
+   - Access Local FortiGate GUI.
+   - Navigate to System > HA and configure HA settings.
+
+4. HA Configuration on Remote FortiGate CLI:
+   - Use the CLI to apply the following commands:
+     config system ha
+     set group-name Training
+     set mode a-a
+     set password Fortinet
+     set hbdev port2 0
+     set session-pickup enable
+     set override disable
+     set priority 100
+     end
